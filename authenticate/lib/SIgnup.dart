@@ -58,7 +58,7 @@ class _SignupState extends State<Signup> {
           ),
           Padding(padding: EdgeInsets.all(20),),
           MaterialButton(
-            onPressed: () {},
+            onPressed: () {Navigator.pop(context);},
             child: Text('Login'),
             color: Colors.blue
           )

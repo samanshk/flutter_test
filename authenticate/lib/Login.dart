@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'SIgnup.dart';
 import 'Home.dart';
+import 'Forgot.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -23,7 +24,7 @@ class _LoginState extends State<Login> {
     print(user.email);
     Navigator.push(context, MaterialPageRoute(builder: (context) => Home(user.email)));
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +41,17 @@ class _LoginState extends State<Login> {
             decoration: InputDecoration(
               icon: Icon(Icons.person),
               hintText: 'Email'
+            ),
+          ),
+          MaterialButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => Forgot()));
+            },
+            child: Text(
+              'Forgot password',
+              style: TextStyle(
+                color: Colors.blue
+              ),
             ),
           ),
           Padding(padding: EdgeInsets.all(10),),
